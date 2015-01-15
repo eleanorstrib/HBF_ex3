@@ -9,6 +9,13 @@ from arithmetic import *
 
 mathness = {
     '+': add,
+    '-': subtract,
+    '*': multiply,
+    '/': divide, 
+    'square': square, 
+    'cube': cube, 
+    'pow': power,
+    'mod': mod
 }
 
 def calc():
@@ -19,7 +26,7 @@ def calc():
         if operation == 'q':
             break
 
-        elif operation == '+':
+        elif operation in mathness:
             num1 = int(listy[1])
             num2 = int(listy[2])
             for key in mathness:
