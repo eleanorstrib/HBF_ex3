@@ -7,21 +7,31 @@ calculator program yourself in this file.
 
 from arithmetic import *
 
+mathness = {
+    '+': add,
+}
+
 def calc():
     while True:
         user_input = raw_input(">")
         listy = user_input.split(" ")
         operation = listy[0]
-        num1 = int(listy[1])
-        num2 = int(listy[2])
-
         if operation == 'q':
             break
 
-        if operation == "+":
-            add(num1,num2)
+        elif operation == '+':
+            num1 = int(listy[1])
+            num2 = int(listy[2])
+            for key in mathness:
+                if key == operation:
+                    mathness[operation]
+                    funk = mathness.get(key)
+                    answer=funk(num1, num2)
+                    print answer  
 
-
+        else:
+            print "I don't understand"
+        
 
 def main():
 	# Your code goes here
